@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bedankt voor je aanvraag | Lappers</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue: #1a6fb5;
+      --blue-dark: #0e4a7e;
+      --ink: #0d1b2a;
+      --cream: #f7f3ec;
+      --sun: #f9c84a;
+      --clean: #ffffff;
+      --sky: #d6eeff;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: linear-gradient(160deg, var(--sky) 0%, var(--cream) 100%);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .card {
+      background: var(--clean);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(26,111,181,0.12);
+      border: 2px solid rgba(214,238,255,0.8);
+    }
+    .icon { font-size: 3.5rem; margin-bottom: 1.25rem; }
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -0.5px;
+      margin-bottom: 0.75rem;
+    }
+    h1 em { font-style: italic; color: var(--blue); }
+    p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #5a7080;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--clean);
+      padding: 0.875rem 2rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn:hover { background: var(--blue-dark); transform: translateY(-2px); }
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--blue-dark);
+      letter-spacing: -0.5px;
+      margin-top: 2rem;
+      display: block;
+    }
+    .logo span { color: var(--blue); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">🎉</div>
+    <h1>Bedankt voor<br>je <em>aanvraag!</em></h1>
+    <p>Je hoort binnen 24 uur van mij om een moment af te spreken. Heb je een urgente vraag? Bel gerust direct.</p>
+    <a href="tel:+31629010630" class="btn">06 290 106 30</a>
+  </div>
+  <a href="/" class="logo">Lap<span>pers</span></a>
+</body>
+</html>
