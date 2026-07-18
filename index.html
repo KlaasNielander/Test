@@ -6,8 +6,9 @@
   - E-mailadres: info@lappers.nl
   - Domeinnaam: lappers.nl (canonical + og:url + schema)
   - KvK-nummer (zie /privacy/)
-  - Contactformulier: main.js simuleert nu de verzending. Koppel vóór livegang een echte
-    formulierverwerker (bijv. Formspree) zodat aanvragen daadwerkelijk aankomen.
+  - Contactformulier is gekoppeld aan Formspree (formspree.io/f/mzdwpyqb), hetzelfde
+    formulier als het bestaande Lappers-glazenwasserformulier. Aanvragen zijn te
+    onderscheiden via het verborgen veld "formulier".
   - Reviews: voorbeeldteksten, vervangen door echte klantbeoordelingen zodra beschikbaar.
 -->
   <meta charset="UTF-8" />
@@ -536,7 +537,10 @@
           </div>
         </div>
 
-        <form class="offerte-form reveal" id="offerteForm" novalidate>
+        <form class="offerte-form reveal" id="offerteForm" novalidate action="https://formspree.io/f/mzdwpyqb" method="POST">
+          <input type="hidden" name="_subject" value="Nieuwe offerteaanvraag hogedrukreiniging (website)" />
+          <input type="hidden" name="formulier" value="Hogedrukreiniging — homepage" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="form-row">
             <div class="form-group">
               <label for="naam">Naam *</label>

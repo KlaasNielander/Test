@@ -160,7 +160,7 @@
     });
   });
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const required = form.querySelectorAll('[required]');
@@ -169,13 +169,34 @@
     if (!valid) return;
 
     const submitBtn = form.querySelector('[type="submit"]');
+    const originalLabel = submitBtn.textContent;
     submitBtn.disabled = true;
     submitBtn.textContent = 'Versturen...';
 
-    // TODO: vervang door een echte endpoint (bijv. Formspree) voor livegang.
-    setTimeout(() => {
-      window.location.href = '/bedankt/';
-    }, 600);
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        window.location.href = '/bedankt/';
+      } else {
+        throw new Error('Formspree gaf een foutstatus terug');
+      }
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+      if (formSuccess) {
+        formSuccess.hidden = false;
+        formSuccess.style.display = 'flex';
+        formSuccess.style.background = '#fef2f2';
+        formSuccess.style.borderColor = '#fecaca';
+        formSuccess.querySelector('p').textContent =
+          'Er ging iets mis bij het versturen. Probeer het opnieuw of bel/app ons direct.';
+      }
+    }
   });
 })();
 

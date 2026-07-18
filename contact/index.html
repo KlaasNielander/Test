@@ -86,7 +86,10 @@
           <p class="werkgebied__note" style="margin-top:1rem;">Geen bezoekadres — wij rijden naar u toe.</p>
         </div>
 
-        <form class="offerte-form reveal" id="offerteForm" novalidate>
+        <form class="offerte-form reveal" id="offerteForm" novalidate action="https://formspree.io/f/mzdwpyqb" method="POST">
+          <input type="hidden" name="_subject" value="Nieuwe offerteaanvraag hogedrukreiniging (website)" />
+          <input type="hidden" name="formulier" value="Hogedrukreiniging — contactpagina" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="form-row">
             <div class="form-group">
               <label for="naam">Naam *</label>
